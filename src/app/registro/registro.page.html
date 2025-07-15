@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="center-title">Registro</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <!-- Nombre -->
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+      </ion-item>
+
+      <!-- Apellido -->
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="text" [(ngModel)]="apellido"></ion-input>
+      </ion-item>
+
+      <!-- Contraseña -->
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <!-- Correo -->
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="correo"></ion-input>
+      </ion-item>
+
+      <!-- Teléfono -->
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input type="tel" [(ngModel)]="telefono"></ion-input>
+      </ion-item>
+
+      <!-- Nivel de Educación -->
+      <ion-item>
+        <ion-label>Nivel de Educación</ion-label>
+        <ion-select
+          [(ngModel)]="nivel_de_educacion"
+          placeholder="Seleccione una opción"
+        >
+          <ion-select-option value="Basica">Enseñanza Básica</ion-select-option>
+          <ion-select-option value="Media">Enseñanza Media</ion-select-option>
+          <ion-select-option value="Universitario"
+            >Universitario</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+
+      <!-- Fecha de Nacimiento -->
+      <ion-item>
+        <ion-label position="floating">Fecha de Nacimiento</ion-label>
+        <ion-datetime
+          presentation="date"
+          [(ngModel)]="selectedDate"
+          display-format="DD/MM/YYYY"
+          [max]="maxDate"
+        ></ion-datetime>
+      </ion-item>
+
+      <!-- Mostrar fecha seleccionada formateada -->
+      <ion-item *ngIf="selectedDate">
+        <ion-label color="medium">
+          Fecha seleccionada: {{ selectedDate | formateoFecha }}
+        </ion-label>
+      </ion-item>
+
+      <!-- Botón -->
+      <ion-button expand="block" fill="solid" (click)="registrarUsuario()">
+        Guardar Datos
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <p class="footer">App desarrollada por Marcelo Carrasco</p>
+</ion-content>

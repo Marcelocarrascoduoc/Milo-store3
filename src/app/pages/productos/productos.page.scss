@@ -1,0 +1,84 @@
+ion-content {
+    --background: none;
+    background: url('/assets/img/login_fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.productos-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); // Fondo oscuro con opacidad
+}
+
+ion-list {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    padding: 0;
+}
+
+ion-item {
+    --background: transparent;
+    background: transparent;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    color: #fff;
+    min-height: 70px;
+}
+
+ion-avatar img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #222;
+}
+
+ion-label h2 {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0 0 2px 0;
+    font-weight: 500;
+}
+
+ion-label p {
+    color: #dddddd;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+ion-button[size="small"] {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    font-size: 0.85rem;
+}
+
+ion-card {
+    margin: 8px 0;
+}
+
+ion-card img {
+    width: 100%;
+    height: 100px; // Reduce la altura de la imagen
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    background: #222;
+}
+
+ion-card-title {
+    font-size: 1rem; // Más pequeño
+}
+
+ion-card-subtitle {
+    font-size: 0.85rem; // Más pequeño
+}

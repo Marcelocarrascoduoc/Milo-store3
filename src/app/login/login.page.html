@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="degradado">
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img src="assets/img/Milo-store.jpg" class="logo" alt="Logo" />
+
+  <!--Ingreso Usuario-->
+  <form (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+    <ion-item class="input ion-margin">
+      <ion-input
+        [(ngModel)]="email"
+        name="email"
+        label="Correo electrónico"
+        labelPlacement="floating"
+        placeholder="Ingrese su correo electrónico"
+        required
+        type="email"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item class="input ion-margin">
+      <ion-input
+        [(ngModel)]="password"
+        name="password"
+        label="Contraseña"
+        labelPlacement="floating"
+        placeholder="Ingrese su contraseña"
+        required
+        type="password"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$"
+        minlength="8"
+        maxlength="20"
+      ></ion-input>
+    </ion-item>
+
+    <!--Botón del Login-->
+    <ion-button
+      class="degradado"
+      expand="block"
+      type="submit"
+      [disabled]="!loginForm.form.valid"
+    >
+      Ingresar
+    </ion-button>
+  </form>
+
+  <div class="divider">
+    <div class="line"></div>
+    <div class="or">o</div>
+    <div class="line"></div>
+  </div>
+
+  <p class="forgot">¿Has olvidado la contraseña?</p>
+
+  <div class="registro">
+    ¿No tienes una cuenta?
+    <a href="#" (click)="registro(); $event.preventDefault()">Regístrate</a>
+  </div>
+</ion-content>

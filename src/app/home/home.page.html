@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="center-title"> ¡Bienvenido a Milo-store!</ion-title>
+    <!-- centrado del titulo-->
+
+    <ion-buttons slot="end">
+      <!-- Boton a la derecha -->
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+      <!-- Botón de menú -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Logo de Milo-store -->
+  <div style="text-align: center; margin-bottom: 20px">
+    <img
+      src="/assets/img/Milo-store.jpg"
+      alt="Logo Milo-store"
+      style="max-width: 180px"
+    />
+  </div>
+
+  <!-- Imágenes de productos que redirigen a productos -->
+  <h2>Productos destacados</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card button (click)="irAProductos()">
+          <img src="/assets/img/Comida-1.jpg" alt="Producto 1" />
+          <ion-card-content>Alimentos para perros</ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card button (click)="irAProductos()">
+          <img src="/assets/img/snack-1.jpeg" alt="Producto 2" />
+          <ion-card-content>Snack para perros</ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h2 style="text-align: center; color: #fff; margin-top: 32px">
+    ¡Conoce un poco más de nuestras mascotas!
+  </h2>
+
+  <!-- Información de perrito salchicha -->
+  <ion-card>
+    <img src="/assets/img/salchicha-1.jpeg" alt="Perrito Salchicha" />
+    <ion-card-header>
+      <ion-card-title>Dachshund</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      El perrito salchicha, también conocido como Dachshund, es una raza
+      amigable, curiosa y valiente. Son excelentes compañeros y muy leales a su
+      familia.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="/assets/img/lizy.jpeg" alt="Perrito schnanuzer " />
+    <ion-card-header>
+      <ion-card-title>Schnanuzer</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      El schnauzer originario de Alemania, conocido por su distintiva barba y
+      cejas pobladas. Es inteligente, leal y muy protector con su familia.
+      Existen tres tamaños: miniatura, mediano y gigante.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Footer -->
+  <p class="footer" style="text-align: center; margin-top: 30px">
+    Esta app está desarrollada por Marcelo Carrasco
+  </p>
+</ion-content>

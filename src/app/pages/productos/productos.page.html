@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Boton a la izquierda -->
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      <!-- Botón de retroceso -->
+    </ion-buttons>
+
+    <ion-title class="center-title">Productos</ion-title>
+    <!-- centrado del titulo-->
+
+    <ion-buttons slot="end">
+      <!-- Boton a la derecha -->
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+      <!-- Botón de menú -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <ion-avatar slot="start">
+        <img [src]="producto.imagen" [alt]="producto.nombre" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ producto.nombre }}</h2>
+        <p>${{ producto.precio }}</p>
+      </ion-label>
+      <ion-button slot="end" size="small" (click)="agregarAlCarrito(producto)">
+        Agregar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Footer -->
+  <p class="footer" style="text-align: center; margin-top: 30px">
+    Esta app está desarrollada por Marcelo Carrasco
+  </p>
+</ion-content>

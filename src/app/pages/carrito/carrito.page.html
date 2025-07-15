@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="center-title"> Micarrito</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>
+        {{ producto.nombre }} - ${{ producto.precio }} <br />
+        Cantidad: {{ producto.cantidad || 1 }}
+      </ion-label>
+      <ion-button
+        size="small"
+        (click)="restarCantidad(producto)"
+        [disabled]="(producto.cantidad || 1) <= 1"
+        >-</ion-button
+      >
+      <ion-button size="small" (click)="sumarCantidad(producto)">+</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Total de la compra -->
+  <ion-item color="light">
+    <ion-label><strong>Total:</strong></ion-label>
+    <ion-note slot="end">${{ obtenerTotal() }}</ion-note>
+  </ion-item>
+
+  <!-- Método de pago -->
+  <ion-item>
+    <ion-label>Método de Pago</ion-label>
+    <ion-select [(ngModel)]="metodoPago" placeholder="Seleccione">
+      <ion-select-option value="efectivo">Efectivo</ion-select-option>
+      <ion-select-option value="tarjeta">Tarjeta</ion-select-option>
+      <ion-select-option value="transferencia">Transferencia</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="finalizarcompra()">
+    Finalizar Compra
+  </ion-button>
+  <ion-button expand="block" (click)="vaciarCarrito()">
+    Vaciar carrito
+  </ion-button>
+</ion-content>

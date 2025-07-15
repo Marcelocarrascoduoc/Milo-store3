@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Boton a la izquierda -->
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      <!-- Botón de retroceso -->
+    </ion-buttons>
+
+    <ion-title class="center-title"> Mi perfil </ion-title>
+    <!-- centrado del titulo-->
+
+    <ion-buttons slot="end">
+      <!-- Boton a la derecha -->
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+      <!-- Botón de menú -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <h1 class="titulo-bienvenido">Hola {{user}}</h1>
+
+  <form>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre" name="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input [(ngModel)]="apellido" name="apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="correo" name="correo" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input [(ngModel)]="telefono" name="telefono" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha Nacimiento</ion-label>
+      <ion-input
+        [(ngModel)]="fechaNacimiento"
+        name="fechaNacimiento"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nivel de Educacion</ion-label>
+      <ion-input
+        [(ngModel)]="educacion"
+        name="educacion"
+        type="text"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="guardarCambios()"
+      >Guardar Cambios</ion-button
+    >
+  </form>
+
+  <p class="footer">App desarrollada por Marcelo Carrasco</p>
+</ion-content>

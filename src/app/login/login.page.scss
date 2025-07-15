@@ -1,0 +1,43 @@
+.logo {
+    width: 150px;
+    /* Más pequeña */
+    margin: 0 auto 20px auto;
+    /* Centrada horizontalmente */
+    opacity: 0.9;
+    display: block;
+}
+
+.input {
+    border-radius: 5px; // Solo el radio
+    border: 1px solid #0077ff; // Borde rojo
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #aaa;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #333;
+}
+
+.or {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.forgot {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.registro {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #000000; 
+}
