@@ -97,3 +97,20 @@ ion-card ion-button {
     margin: 0 auto;
     text-align: center;
 }
+
+ion-datetime {
+  --background: #fff !important;
+  background: #fff !important;
+  border-radius: 12px;
+}
+
+ion-datetime::part(calendar-day) {
+  color: #000 !important;
+  opacity: 1 !important;
+}
+
+ion-datetime::part(calendar-day-active),
+ion-datetime::part(calendar-day-today) {
+  color: #fff !important;
+  background: #103fbe !important;
+}
